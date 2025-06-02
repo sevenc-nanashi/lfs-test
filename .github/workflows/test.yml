@@ -15,4 +15,4 @@ jobs:
 
       - name: Check files
         run: |
-          sha256sum dummy.png dummy.webp
+          sha256sum -c checksums.txt
