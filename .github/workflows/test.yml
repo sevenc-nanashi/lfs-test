@@ -11,8 +11,10 @@ jobs:
       - name: Setup lfs
         run: |
           echo "${{ secrets.lfs_credentials }}" >> ~/.git-credentials
+          git config --global credential.helper store
 
-          ./setup.bash
+          git lfs install
+          git lfs pull
 
       - name: Check files
         run: |
