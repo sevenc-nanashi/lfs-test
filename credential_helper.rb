@@ -61,7 +61,9 @@ when "get"
   puts "username=#{user}"
   puts "password=#{token}"
 when "fetch_timeout"
-  puts fetch_timeout
+  # アクセストークンの有効期限を取得
+  # 念のため60秒の余裕を持たせる
+  puts (fetch_timeout - 60)
 when "fill"
   exit 0
 when "erase"

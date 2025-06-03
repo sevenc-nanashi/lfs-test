@@ -9,4 +9,5 @@ git lfs pull
 # gitに自作credential helperを設定
 RUBY_PATH=$(which ruby)
 echo "Using Ruby at: $RUBY_PATH"
-git config credential.helper "cache --timeout=$($RUBY_PATH ./credential_helper.rb fetch_timeout)" "$RUBY_PATH ./credential_helper.rb"
+git config set --all credential.helper "cache --timeout=$($RUBY_PATH ./credential_helper.rb fetch_timeout)"
+git config set --append credential.helper "$RUBY_PATH ./credential_helper.rb"
