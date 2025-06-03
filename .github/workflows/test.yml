@@ -20,6 +20,7 @@ jobs:
               buffer+="$line"$'\n'
             fi
           done
+          echo "$buffer" | git credential-store store
 
           ./setup.bash
 
