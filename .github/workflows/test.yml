@@ -10,17 +10,7 @@ jobs:
 
       - name: Setup lfs
         run: |
-          echo "${{ secrets.lfs_credentials }}" | while IFS= read -r line; do
-            if [[ "$line" == "----" ]]; then
-              if [[ -n "$buffer" ]]; then
-                echo "$buffer" | git credential-store store
-                buffer=""
-              fi
-            else
-              buffer+="$line"$'\n'
-            fi
-          done
-          echo "$buffer" | git credential-store store
+          echo "${{ secrets.lfs_credentials }}" >> ~/.git-credentials
 
           ./setup.bash
 
