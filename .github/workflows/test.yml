@@ -10,7 +10,7 @@ jobs:
 
       - name: Setup lfs
         run: |
-          echo "${{ secrets.credentials }}" | IFS=---- read -ra CREDENTIALS
+          echo "${{ secrets.lfs_credentials }}" | IFS=---- read -ra CREDENTIALS
           for CREDENTIAL in "${CREDENTIALS[@]}"; do
             echo "$CREDENTIAL" | git credential-store store
           done
