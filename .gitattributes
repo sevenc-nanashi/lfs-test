@@ -1,2 +1,3 @@
 dummy.png filter=lfs diff=lfs merge=lfs -text
 dummy.webp filter=lfs diff=lfs merge=lfs -text
+dummy.jpg filter=lfs diff=lfs merge=lfs -text
